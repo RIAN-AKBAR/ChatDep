@@ -194,6 +194,39 @@
             line-height: 1.5;
         }
 
+         .steps {
+            list-style-type: none;
+            counter-reset: step-counter;
+        }
+        
+        .steps li {
+            counter-increment: step-counter;
+            margin-bottom: 25px;
+            padding-left: 60px;
+            position: relative;
+        }
+        
+        .steps li:before {
+            content: counter(step-counter);
+            background-color: #128C7E;
+            color: white;
+            font-weight: bold;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .steps li strong {
+            color: #075E54;
+            font-size: 1.1rem;
+        }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -272,15 +305,14 @@
             </div>
         </div>
         <div class="instructions">
-            <h3>Quick Start Guide</h3>
-            <ol>
-                <li><strong>Click the "Launch WhatsApp Clone" button above</strong></li>
-                <li><strong>Choose an account:</strong> Use one of the demo accounts provided</li>
-                <li><strong>Login:</strong> Enter phone number and password "password"</li>
-                <li><strong>Start Chatting:</strong> Select a contact and begin messaging</li>
-                <li><strong>Test Real-time:</strong> Open two browsers to test live chat</li>
-            </ol>
-        </div>
+                <h2>Cara Menggunakan:</h2>
+                <ol class="steps">
+                    <li><strong>Buka Portal:</strong> Akses <code>portal.html</code> di browser</li>
+                    <li><strong>Klik Tombol Launch:</strong> Tekan tombol "Launch WhatsApp Clone"</li>
+                    <li><strong>Daftar:</strong> Lalu gunakan akun demo yang sudah didaftarkan</li>
+                    <li><strong>Mulai Chat:</strong> Pilih kontak dan mulai percakapan</li>
+                </ol>
+            </div>
     </div>
 
     <script>
