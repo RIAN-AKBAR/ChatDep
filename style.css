@@ -1,0 +1,32 @@
+/* Portal Link Style */
+.portal-link {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #25D366;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    font-size: 14px;
+}
+
+.portal-link:hover {
+    background: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+}
+
+/* Responsive portal link */
+@media (max-width: 768px) {
+    .portal-link {
+        top: 10px;
+        left: 10px;
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+}
