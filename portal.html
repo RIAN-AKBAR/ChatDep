@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal - WhatsApp Clone</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .portal-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 50px;
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 36px;
+            color: white;
+        }
+
+        h1 {
+            color: #128C7E;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .access-btn {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            margin-bottom: 30px;
+        }
+
+        .access-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        .access-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .feature {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .feature h3 {
+            color: #128C7E;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .feature p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .demo-accounts {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .demo-accounts h3 {
+            color: #128C7E;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .account {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .account:last-child {
+            border-bottom: none;
+        }
+
+        .account-info {
+            flex: 1;
+        }
+
+        .account-phone {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .account-password {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .copy-btn {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        .copy-btn:hover {
+            background: #128C7E;
+        }
+
+        .instructions {
+            margin-top: 30px;
+            padding: 20px;
+            background: #e8f5e8;
+            border-radius: 12px;
+            text-align: left;
+        }
+
+        .instructions h3 {
+            color: #128C7E;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .instructions ol {
+            padding-left: 20px;
+        }
+
+        .instructions li {
+            margin-bottom: 10px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .portal-container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .access-btn {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="portal-container">
+        <div class="logo">💬</div>
+        <h1>WhatsApp Clone</h1>
+        <p class="subtitle">
+            Experience real-time messaging with our WhatsApp Clone. 
+            Chat instantly, share files, and enjoy seamless communication.
+        </p>
+        
+        <a href="index.html" class="access-btn pulse">
+            🚀 Launch WhatsApp Clone
+        </a>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">💬</div>
+                <h3>Real-time Chat</h3>
+                <p>Send and receive messages instantly without page refresh</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📁</div>
+                <h3>File Sharing</h3>
+                <p>Share files and documents with your contacts easily</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <h3>Responsive Design</h3>
+                <p>Works perfectly on desktop, tablet, and mobile devices</p>
+            </div>
+        </div>
+
+        <div class="demo-accounts">
+            <h3>Demo Accounts (Password: password)</h3>
+            <div class="account">
+                <div class="account-info">
+                    <div class="account-phone">081234567890</div>
+                    <div class="account-password">John Doe</div>
+                </div>
+                <button class="copy-btn" onclick="copyToClipboard('081234567890')">Copy</button>
+            </div>
+            <div class="account">
+                <div class="account-info">
+                    <div class="account-phone">081234567891</div>
+                    <div class="account-password">Jane Smith</div>
+                </div>
+                <button class="copy-btn" onclick="copyToClipboard('081234567891')">Copy</button>
+            </div>
+            <div class="account">
+                <div class="account-info">
+                    <div class="account-phone">081234567892</div>
+                    <div class="account-password">Bob Johnson</div>
+                </div>
+                <button class="copy-btn" onclick="copyToClipboard('081234567892')">Copy</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>Quick Start Guide</h3>
+            <ol>
+                <li><strong>Click the "Launch WhatsApp Clone" button above</strong></li>
+                <li><strong>Choose an account:</strong> Use one of the demo accounts provided</li>
+                <li><strong>Login:</strong> Enter phone number and password "password"</li>
+                <li><strong>Start Chatting:</strong> Select a contact and begin messaging</li>
+                <li><strong>Test Real-time:</strong> Open two browsers to test live chat</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert('Phone number copied: ' + text);
+            }, function(err) {
+                console.error('Could not copy text: ', err);
+            });
+        }
+
+        // Add click animation to the main button
+        document.querySelector('.access-btn').addEventListener('click', function(e) {
+            e.target.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                e.target.style.transform = '';
+            }, 150);
+        });
+
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const features = document.querySelectorAll('.feature');
+            features.forEach((feature, index) => {
+                feature.style.animationDelay = (index * 0.1) + 's';
+                feature.style.animation = 'fadeIn 0.6s ease-out forwards';
+                feature.style.opacity = '0';
+            });
+        });
+    </script>
+</body>
+</html>
