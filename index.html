@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .portal-link {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .portal-link:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <a href="portal.html" class="portal-link">🏠 Portal</a>
+    
+    <div class="container">
+        <div class="auth-container">
+            <h1>WhatsApp Clone</h1>
+            <div class="auth-options">
+                <a href="login.php" class="btn-primary">Masuk</a>
+                <a href="register.php" class="btn-secondary">Daftar</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
